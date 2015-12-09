@@ -1,0 +1,126 @@
+
+
+// --------------------------------------------------------------------------
+// LAYOUT
+// --------------------------------------------------------------------------
+
+
+// Body
+
+body {
+    height: 100%;
+    overflow-y: scroll;
+    padding: 0;
+
+    // @include respond-to(md) { padding: 0; }
+    // @include respond-to(sm) { padding: 0 5rem; }
+}
+
+
+// HTML5 content blocks.
+
+.Nav,
+.Header,
+.Section,
+.Article,
+.Footer {
+}
+
+
+// The content column container.
+
+.Container {
+    @include clearfix();
+    margin: 0 auto;
+    max-width: $columnPicture;
+    padding: 0 $space;
+    position: relative;
+
+    > h1,
+    > h2,
+    > p,
+    > ul,
+    .Container--textColumn {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: $columnText;
+    }
+
+    @include respond-to(md) {
+        padding: 0;
+    }
+}
+
+// .Container--textColumn { max-width: $columnText; }
+// .Container--projects   { max-width: 100%; @include respond-to(md) { max-width: $columnWidePicture; } }
+// .Container--bio        { max-width: $columnBio; }
+// .Container--full       { max-width: 100%; }
+
+
+// Elements
+
+.HzLine {
+    background: linear-gradient(to right,rgba(255,255,255,0),#ccc,rgba(255,255,255,0));
+    height: rem(1);
+    margin: $space 0;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.Things {
+    // margin: $space * 1.25 0;
+    margin-top: $space * 0.75;
+
+    figure {
+        margin: 0 0 $space * 0.5 0;
+        text-align: center;
+
+        img { border-radius: 50%; }
+    }
+
+    p {
+        text-align: center;
+    }
+}
+
+.TestimonialLink {
+    @extend .u-sizeFill;
+    @include u-link(none);
+
+    .Media {
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+
+        @include respond-to(sm) {
+            width: 28%;
+        }
+    }
+
+    .Media-img {
+        margin-right: $space * 0.5;
+    }
+
+    .Media-body {
+        @include remFallback($sizeQuote);
+        color: $color-brand;
+        font-family: $font-serif-bold;
+        line-height: 1.25;
+
+        @include respond-to(sm) {
+            transform: translateY(rem(-7));
+        }
+    }
+}
+
+// Suit grid management
+
+.Grid--withGutter {
+    margin: 0 -#{$space--D2};
+}
+
+.Grid--withGutter > .Grid-cell {
+    padding: 0 #{$space--D2};
+}

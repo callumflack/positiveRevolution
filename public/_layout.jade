@@ -1,0 +1,38 @@
+doctype
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="handheldfriendly", content="true")
+        meta(name="mobileoptimized", content="320")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        title= locals.title ? title + " | " + site_title : site_title
+        meta(name='description', content=site_description)
+        meta(name='keywords', content=site_keywords)
+        link(rel="canonical" href="#{ site_url }")
+        meta(name="author", content="#{ website_by }")
+        meta(name="google-site-verification" content=site_verification)
+        link(rel="stylesheet" href="/css/styles.css")
+
+    body(class="#{ current.path[0] }")
+        
+        != partial("_shared/header")
+
+        if current.path[0] === "index"
+            != yield
+        
+        else if ["404"].indexOf(current.path[0]) !== -1
+            != yield
+
+        != partial("_shared/footer")
+
+        //- script(src="/js/jquery.js")
+        //- script(src="/js/application.js")
+        //- script(type='text/javascript').
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', '#{ locals.analytics_account }']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();

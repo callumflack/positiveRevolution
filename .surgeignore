@@ -1,0 +1,5 @@
+node_modules
+npm-debug.log
+fonts-ignore
+img/-notInUse
+img/*.psd

@@ -1,0 +1,32 @@
+
+
+// --------------------------------------------------------------------------
+// SECTIONS
+// --------------------------------------------------------------------------
+
+
+.Section {
+    padding: 0 0 ($space * 2.5) 0;
+    // @include respond-to(xs) { margin-bottom: $space * 3; }
+
+    &.Section--bgNeutral { background-color: $color-bg-neutral; }
+
+    &.Section--bgNeutralHalf {
+        padding: 0;
+        position: relative;
+
+        + .Section { padding: ($space * 2.5) 0; }
+
+        &:before {
+            background-color: $color-bg-neutral;
+            bottom: 0;
+            content: "";
+            display: block;
+            height: 50%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+    }
+}

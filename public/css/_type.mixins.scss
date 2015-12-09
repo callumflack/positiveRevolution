@@ -1,0 +1,154 @@
+
+
+// --------------------------------------------------------------------------
+// TYPOGRAPHY MIXINS
+// --------------------------------------------------------------------------
+
+
+// Reset for @font-face
+// --------------------------------------------------------------------------
+
+@mixin TypeReset() {
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+// Text styles
+// --------------------------------------------------------------------------
+
+@mixin TextRg(
+    $font: $font-serif-reg
+) {
+    @include TypeReset();
+    @include remFallback($sizeText);
+    color: $color-text;
+    font-family: $font;
+    letter-spacing: 0;
+    line-height: $base-line-height-unit;
+    text-align: left;
+    text-transform: none;
+
+    a {
+        // background-position: 0 #{$base-font-size-unit}px !important;
+    }
+}
+
+@mixin TextLg(
+    $font: $font-serif-reg
+) {
+    @include TextRg();
+    @include remFallback($sizeTextLg);
+    font-family: $font;
+    line-height: 1.35;
+}
+
+@mixin TextSm(
+    $font: $font-serif-reg
+) {
+    @include TextRg();
+    @include remFallback($sizeTextSm);
+    font-family: $font;
+
+    @include respond-to(sm) {
+    }
+}
+
+@mixin TextSans(
+    $font: $sans-reg
+) {
+    @include TypeReset();
+    @include remFallback($sizeQuote);
+    font-family: $font;
+    color: $color-grey;
+    letter-spacing: 0;
+    margin: 0 auto $space--X15;
+    text-align: center;
+
+    a {
+        @include u-link($linkRuleGrey);
+    }
+
+    @include respond-to(sm) {
+    }
+}
+
+
+// Headlines
+// --------------------------------------------------------------------------
+
+@mixin Display() {
+    @include TypeReset();
+    @include remFallback($sizeHeader);
+    color: $color-text;
+    font-family: $font-display;
+    letter-spacing: 0.01em;
+    line-height: 1.25;
+    margin-bottom: $space * 1.25;
+    text-align: center;
+
+    @include respond-to(sm) {
+
+    }
+}
+
+@mixin HeadlineMd() {
+    @include TypeReset();
+    @include remFallback($sizeHeaderSm);
+    color: $color-text;
+    font-family: $font-display;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    margin-bottom: rem(5);
+    text-align: center;
+
+    span {
+        font-family: $sans-bold;
+    }
+
+    p + {
+        margin-top: $space * 1.5;
+    }
+
+    @include respond-to(sm) {
+    }
+}
+
+@mixin HeadlineSm() {
+    @include TypeReset();
+    @include remFallback($base-font-size-unit - 1);
+    color: $color-text;
+    font-family: $sans-bold;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-bottom: $space * 1.5;
+    text-transform: uppercase;
+
+    @include respond-to(sm) {
+    }
+}
+
+
+// Make them all available
+// --------------------------------------------------------------------------
+
+h1              { @include Display(); }
+h2              { @include HeadlineMd(); }
+h3              { @include HeadlineSm(); }
+h4              { @include HeadlineMd(); @include remFallback($sizeHeaderXs); }
+
+.u-textRg       { @include TextRg(); }
+.u-textRgEm     { @include TextRg($font: $font-serif-reg-i); }
+.u-textRgEmB    { @include TextRg($font: $font-serif-bold-i); }
+.u-textSmBlock  { > p { @include TextSm(); } }
+.u-textSm       { @include TextSm(); }
+.u-textSmEm     { @include TextSm($font: $font-serif-reg-i); }
+.u-textSmEmB    { @include TextSm($font: $font-serif-bold-i); }
+.u-textLg       { @include TextLg; }
+.u-textLgB      { @include TextLg($font: $font-serif-bold); }
+.u-textLgEmB    { @include TextLg($font: $font-serif-bold-i); }
+.u-textSansSm   { @include TextSans(); @include remFallback($sizeCaption); }
+.u-textSans     { @include TextSans(); }
+.u-textSansB    { @include TextSans($font: $sans-bold); }
+.u-textGrey     { color: $color-grey !important }
+.u-textGreyLite { color: $color-grey-lite !important }

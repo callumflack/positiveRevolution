@@ -1,0 +1,128 @@
+
+
+// --------------------------------------------------------------------------
+// FORM
+// --------------------------------------------------------------------------
+
+
+input,
+textarea,
+select {
+    @include TextRg();
+    @include remFallback($sizeText);
+    background: $color-white;
+    border: 0;
+    border: 1px solid $color-text-rule;
+    border-radius: rem(4);
+    color: $color-grey;
+    display: inline-block !important;
+    padding: rem(15) rem(18) !important;
+    resize: none;
+    -webkit-appearance: none;
+    width: 100%;
+
+    &:not(:last-child) {
+        margin: 0 0 ($space * 0.5);
+    }
+
+    @include on-event() {
+        outline: 0;
+    }
+
+    &::-webkit-input-placeholder { color: $color-grey-lite; }
+    &:-moz-placeholder { color: $color-grey-lite; }
+    &::-moz-placeholder { color: $color-grey-lite; }
+    &:-ms-input-placeholder { color: $color-grey-lite; }
+}
+
+
+// theme mailchimp
+#mc_embed_signup {
+    margin: ($space) 0 ($space * 0.5);
+}
+
+#mc_embed_signup input {
+    border: 1px solid $color-grey-lite;
+    line-height: $space * 1;
+}
+
+#mc_embed_signup input.email {
+    // display: block;
+    // padding: 8px 0;
+    margin: 0 2% 0 0;
+    // text-indent: 0;
+    width: 60%;
+    min-width: 130px;
+}
+
+#mc_embed_signup input.Button {
+    // display: block;
+    width: 36%;
+    margin: 0;
+    min-width: 90px;
+}
+
+#mc_embed_signup .Button {
+    @include remFallback($sizeText);
+    background-color: $color-grey-lite;
+    border-color: $color-grey-lite;
+    color: $color-white;
+
+    @include on-event() {
+        background-color: $color-grey;
+    }
+}
+
+
+// Component structure
+.NewsletterForm {
+    background-color: $color-bg-neutral;
+    border-radius: rem(4);
+    // margin-top: $space * 2;
+    padding: $space * 1.5;
+    padding-top: $space * 0.5;
+    // @include respond-to(xs) { margin-top: $space * 3; }
+}
+
+.NewsletterForm .Figure {
+    margin: ($space * 0.5) 0;
+    text-align: center;
+
+    img {
+        height: rem(130);
+    }
+}
+
+.NewsletterForm h2 {
+    line-height: 1.3;
+}
+
+
+// http://bavotasan.com/2011/style-select-box-using-only-css/
+// http://red-team-design.com/making-html-dropdowns-not-suck/
+.Select-styled {
+    @include remFallback($base-font-size-unit - 1);
+    color: $color-text-rule;
+    margin: 0 0 ($space * 0.5);
+    position: relative;
+
+    select {
+        color: $color-text-rule;
+    }
+
+    &:after {
+        border-top: .3em solid;
+        border-left: .3em solid transparent;
+        border-right: .3em solid transparent;
+        content: "";
+        display: block;
+        height: 0;
+        margin-left: .35rem;
+        position: absolute;
+        right: $space * 0.5;
+        top: 50%;
+        transform: translateY(rem(-2));
+        vertical-align: middle;
+        width: 0;
+    }
+}

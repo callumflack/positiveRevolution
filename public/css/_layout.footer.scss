@@ -1,0 +1,30 @@
+
+
+// --------------------------------------------------------------------------
+// FOOTER LAYOUT
+// --------------------------------------------------------------------------
+
+
+.Footer {
+    margin: -$space 0 $space 0;
+
+    li,
+    p,
+    a {
+        @include TextSans();
+        color: $color-grey;
+        text-align: center;
+
+        span {
+            font-family: $sans-bold;
+        }
+    }
+
+    a {
+        @include u-link();
+    }
+
+    li:not(:last-child) {
+        margin-right: $space * 0.3;
+    }
+}
