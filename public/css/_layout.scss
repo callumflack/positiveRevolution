@@ -110,7 +110,7 @@ body {
         line-height: 1.25;
 
         @include respond-to(sm) {
-            transform: translateY(rem(-7));
+            transform: translateY(rem(-2));
         }
     }
 }

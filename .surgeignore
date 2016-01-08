@@ -1,5 +1,6 @@
 node_modules
 npm-debug.log
 fonts-ignore
-img/-notInUse
-img/*.psd
+public/img/-notInUse
+public/img/*.psd
+public/TODO.md

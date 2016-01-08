@@ -64,12 +64,12 @@ select {
 
 #mc_embed_signup .Button {
     @include remFallback($sizeText);
-    background-color: $color-grey-lite;
-    border-color: $color-grey-lite;
+    // background-color: $color-brand;
+    border-color: $color-brand;
     color: $color-white;
 
     @include on-event() {
-        background-color: $color-grey;
+        border-color: darken($color-brand,10%);
     }
 }
 
@@ -78,9 +78,7 @@ select {
 .NewsletterForm {
     background-color: $color-bg-neutral;
     border-radius: rem(4);
-    // margin-top: $space * 2;
-    padding: $space * 1.5;
-    padding-top: $space * 0.5;
+    padding: ($space * 0.5) ($space * 1.5) ($space * 1);
     // @include respond-to(xs) { margin-top: $space * 3; }
 }
 

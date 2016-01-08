@@ -29,7 +29,7 @@
     }
 
     @include on-event() {
-        color: darken($color-white,10%);
+        background-color: darken($color-brand,10%);
     }
 }
 
