@@ -2,15 +2,16 @@
     "globals": {
         "site_title": "Positive Revolution",
         "site_tagline": "The Journey is the Reward",
-        "site_description": "Positive Revolution advances business through structured people development by offering training programs that focus on people. Located in Cairns, Australia, we travel throughout Australia.",
-        "site_keywords": "business development, staff development, human resources, training programs, Cairns, Australia",
-        "site_url": "http://www.www.positiverevolution.com.au",
+        "site_description": "Positive Revolution provides outsourced company culture development. We work with companies and organisations to provide the people balance ensuring they are happy, healthy and love working for the organisations they are with. Located in Cairns, Queensland, we travel throughout Australia.",
+        "site_keywords": "business development, business culture development, staff development, human resources, training programs, Cairns, Queensland, Australia",
+        "site_url": "http://www.positiverevolution.com.au",
         "site_email": "greg@positiverevolution.com.au",
         "site_phone": "0457 738 099",
         "site_linkedin": "leadershiptrainerdeveloper",
+        "typeform_link": "https://greg143.typeform.com/to/ONxLOX",
         "logo": "/images/logo.png",
         "analytics_account": "UA-49604697-1",
         "site_verification": "NhTITTbQi0TLMQYx_oYdSRl-uPQBIzxWOQT6gOqTU3M",
-        "website_by": "Patternworks | http://pattern.works | December 2015"
+        "website_by": "Patternworks | www.patternworks.com.au | December 2015"
     }
 }
