@@ -1,0 +1,14 @@
+
+
+// --------------------------------------------------------------------------
+// TYPEFORM OVERRIDE
+// --------------------------------------------------------------------------
+
+
+.typeform-share.button {
+    background: none;
+    border: none;
+    border-radius: initial;
+    float: none;
+    @extend .Button;
+}
