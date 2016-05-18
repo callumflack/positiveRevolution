@@ -8,45 +8,49 @@
 
 
 .Button {
-    @include HeadlineSm();
-    background-color: $color-brand;
-    border: 0;
-    border-radius: rem(4);
-    color: $color-white;
-    line-height: 1.25;
-    margin: $space * 0.75 0;
-    padding: rem(18) rem(32) rem(18);
-    text-align: center;
-    vertical-align: top; // 1 //
+	@include HeadlineSm();
+	background-color: $color-brand;
+	border: 0;
+	border-radius: rem(4);
+	color: $color-white;
+	line-height: 1.25;
+	margin: $space * 0.75 0;
+	padding: rem(18) rem(32) rem(18);
+	text-align: center;
+	vertical-align: top; // 1 //
 
-    span {
-        border-bottom: 1px solid $color-text;
-        padding-bottom: $space * 0.25;
-    }
+	span {
+		border-bottom: 1px solid $color-text;
+		padding-bottom: $space * 0.25;
+	}
 
-    a {
-        @include u-link(none);
-    }
+	a {
+		@include u-link(none);
+	}
 
-    @include on-event() {
-        background-color: darken($color-brand,10%);
-    }
+	@include on-event() {
+		background-color: darken($color-brand,10%);
+	}
+
+	@include respond-to(xs) {
+		
+	}
 }
 
 .Button--sm {
-    @include remFallback($sizeQuote);
-    padding: rem(14) rem(24);
-    width: 100%;
+	@include remFallback($sizeQuote);
+	padding: rem(14) rem(24);
+	width: 100%;
 
-    @include respond-to(sm) { width: 90%; }
+	@include respond-to(sm) { width: 90%; }
 }
 
 .Button--rev {
-    background-color: $color-white;
-    color: $color-text;
+	background-color: $color-white;
+	color: $color-text;
 
-    @include on-event() {
-        background-color: darken($color-white,10%);
-        color: $color-text;
-    }
+	@include on-event() {
+		background-color: darken($color-white,10%);
+		color: $color-text;
+	}
 }

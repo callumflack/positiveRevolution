@@ -1,7 +1,7 @@
 
 /* ==========================================================================
 
-    IMAGES
+	IMAGES
 
    ========================================================================== */
 
@@ -14,9 +14,9 @@
  */
 
 img {
-    max-width: 100%; /* [1] */
-    font-style: italic; /* [2] */
-    vertical-align: middle; /* [3] */
+	max-width: 100%; /* [1] */
+	font-style: italic; /* [2] */
+	vertical-align: middle; /* [3] */
 }
 
 
@@ -30,22 +30,23 @@ img {
 .gm-style img, /* [1] */
 img[width],    /* [2] */
 img[height] {  /* [2] */
-    /* max-width: none; */
+	/* max-width: none; */
 }
 
 
 // Circle it
 .img-circle {
-    border-radius: 50%;
+	border-radius: 50%;
 }
 
 // Size SVG icons
 .img-icon {
-    height: rem(32);
-    width: rem(32);
+	height: rem(32);
+	margin-top: 2px;
+	width: rem(32);
 }
 
 // Theme the zoom.js overlay
 .zoom-overlay {
-    background-color: $color-bg-neutral!important;
+	background-color: $color-bg-neutral!important;
 }
